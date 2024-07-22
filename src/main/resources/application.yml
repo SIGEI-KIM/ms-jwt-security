@@ -1,0 +1,24 @@
+#spring.application.name=ms-jwt-security
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring_jwt
+    username: postgres
+    password: S3cret@x1234
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        globally_quoted_identifiers: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+application:
+  security:
+    jwt:
+      secret-key: 77eb96f651d905cdac23a738f3ea8d09421c374760424259238b63015649212f
+      access-token-expiration: 60000
+      refresh-token-expiration: 604800000
